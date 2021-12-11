@@ -1,10 +1,6 @@
 from Person import Person
 from enum import Enum
 
-# User to make the filtering of doctors and nurses easier
-class SPECIALIST_TYPE(Enum):
-    DOCTOR = "d"
-    NURSE = "n"
 
 
 class Hospital_Worker(Person):

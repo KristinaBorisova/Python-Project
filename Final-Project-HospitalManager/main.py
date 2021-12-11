@@ -1,6 +1,7 @@
 from typing import ClassVar
 from Hospital_Visitor import *
 from Hospital_Spetialist import *
+from Specialist_Type import *
 
 # from menu import displayMenu
 from enum import Enum
@@ -9,10 +10,20 @@ from enum import Enum
 # import csv
 
 
-def display_list_content(list):
-    for index in range(len(list)):
-        element = list[index]
+def display_list_content(some_list):
+    for index in range(len(some_list)):
+        element = some_list[index]
         print(index + 1, element)
+
+
+def display_tuple_content(some_tuple):
+    for index, item in enumerate(some_tuple):
+        print(index, item)
+
+
+def display_dictionaty_conent(some_dictionary):
+    for key, value in some_dictionary:
+        print(key, value)
 
 
 def main():
@@ -38,6 +49,22 @@ def main():
 
     # Iterate through list and display indexed results
     display_list_content(hospital_specialist2)
+
+    # Create a tuple with Doctors' names
+    a_tuple = (1, 2, 3, 4)
+    display_tuple_content(a_tuple)
+
+    print("=====Doctors' Shift DICTIONARY=====")
+    # Create a dictionaty for holding information about Doctors' weekly shift
+    doctors_shifts = {
+        "Monday": Specialist_Type.SURGEON,
+        "Tuesday": Specialist_Type.NEUROLOGIST,
+        "Wednesday": Specialist_Type.ORTHOPEDIC,
+        "Thursday": Specialist_Type.GP,
+        "Friday": Specialist_Type.NURSE,
+    }
+
+    display_dictionaty_conent(doctors_shifts)
 
     # visitor1 = Visitor("Name1", "LastName1", "20", VISITOR_TYPE.VISITOR, False)
     # visitor2 = Visitor("Name2", "LastName2", "30", VISITOR_TYPE.VISITOR, True)
