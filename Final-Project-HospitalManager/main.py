@@ -22,8 +22,7 @@ def display_tuple_content(some_tuple):
 
 
 def display_dictionaty_conent(some_dictionary):
-    for key, value in some_dictionary:
-        print(key, value)
+    print(some_dictionary.items())
 
 
 def main():
@@ -70,13 +69,14 @@ def main():
     # visitor2 = Visitor("Name2", "LastName2", "30", VISITOR_TYPE.VISITOR, True)
     #   print(visitor1.get_last, "|", visitor2.get_last)
 
-    patient1 = Patient("Name3", "LastName3", "50", VISITOR_TYPE.PATIENT, False, False)
-    patient2 = Patient("Name4", "LastName4", "20", VISITOR_TYPE.PATIENT, False, True)
+    # patient1 = Patient("Name3", "LastName3", "50", VISITOR_TYPE.PATIENT, False, False)
+    # patient2 = Patient("Name4", "LastName4", "20", VISITOR_TYPE.PATIENT, False, True)
 
-    doctor1 = Doctor("Name1", "LastName", "20", SPECIALIST_TYPE.DOCTOR, "cardiology", 15)
-    doctor2 = Nurse("Name2", "LastName2", "30", SPECIALIST_TYPE.NURSE, 10)
 
-    # hospital_specialists.append(visitor1)
+# doctor1 = Doctor("Name1", "LastName", "20", SPECIALIST_TYPE.DOCTOR, "cardiology", 15)
+# doctor2 = Nurse("Name2", "LastName2", "30", SPECIALIST_TYPE.NURSE, 10)
+
+# hospital_specialists.append(visitor1)
 
 
 if __name__ == "__main__":
