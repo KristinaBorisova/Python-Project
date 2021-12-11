@@ -22,7 +22,8 @@ def display_tuple_content(some_tuple):
 
 
 def display_dictionaty_conent(some_dictionary):
-    print(some_dictionary.items())
+    for key, value in some_dictionary.items():
+        print(key, ":", str(value))
 
 
 def main():
