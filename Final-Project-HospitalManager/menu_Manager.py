@@ -8,6 +8,7 @@ def display_tuple_content(some_tuple):
         print(index, item)
 
 
+# Iterate through list and display indexed content
 def display_list_content(some_list):
     for index in range(len(some_list)):
         element = some_list[index]

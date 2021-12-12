@@ -31,5 +31,5 @@ class Patient(Hospital_Visitor):
 
 class Visitor(Hospital_Visitor):
     def __init__(self, first_name, last_name, age, TYPE, has_appointment):
-        super().__init__(first_name="noname", last_name="nolastName", age=0, TYPE="v")
+        super().__init__(first_name="noname", last_name="nolastName", age=0, gender="Male", TYPE="v")
         self.has_appointment = has_appointment

@@ -4,7 +4,9 @@ from Hospital_Spetialist import *
 from Specialist_Type import *
 from menu import *
 from enum import Enum
+import information
 
+import csv
 
 doctors_shifts = {
     "Monday": Specialist_Type.SURGEON.value,
@@ -17,24 +19,25 @@ doctors_shifts = {
 patients_list = [["Fist_Name", "Second_Name", "Last_Name", 23, True, True]]
 visitors_list = []
 
-# def display_list_content(some_list):
-#   for index in range(len(some_list)):
-#      element = some_list[index]
-#     print(index + 1, element)
-
-
-# def display_tuple_content(some_tuple):
-#   for index, item in enumerate(some_tuple):
-#       print(index, item)
-
-# def display_dictionaty_conent(some_dictionary):
-#   for key, value in some_dictionary.items():
-#      print(key, ":", str(value))
-
 
 def main():
 
-    managerMenu = menu
+    # managerMenu = menu
+
+    patient = Hospital_Visitor("Kristina", "Borisova", 23, "female", "patient")
+
+    # 1.create a new csv file and write in it
+    header = ["First-Name", "Last-Name", "Age", "Gender", "Priority", "WaitingTime"]
+    data = [
+        ["Alex", "Alexov", 35, "Male", "2", 10],
+        ["Alex", "Alexov", 35, "Male", "2", 10],
+        ["Alex", "Alexov", 35, "Male", "2", 10],
+    ]
+    filename = "./patients_data.csv"
+    with open(filename, "w", newline="") as file:
+        csvwriter = csv.writer(file)  # 2. create a csvwriter object
+        csvwriter.writerow(header)  # 4. write the header
+        csvwriter.writerows(data)  # 5. write the rest of the data
 
     hospital_specialists = [
         {"First name": "Name1", "Last_Name": 5, "age": 20},
@@ -46,21 +49,14 @@ def main():
         {"Fist Name", "Last Name", 45, "Male", "Heart", "15"},
         {"Fist Name2", "Last Name2", 452, "Male2", "Heart2", "152"},
     ]
-    # create a list for hospital patients
-    hospital_patients = []
 
-    # create a list for visitors
-    hospital_visitors = []
     display_list_content(hospital_specialists)
 
     print("New List coming:::::")
 
-    # Iterate through list and display indexed results
-    display_list_content(hospital_specialist2)
-
     # Create a tuple with Doctors' names
-    a_tuple = (1, 2, 3, 4)
-    display_tuple_content(a_tuple)
+    # a_tuple = (1, 2, 3, 4)
+    # display_tuple_content(a_tuple)
 
 
 # visitor1 = Visitor("Name1", "LastName1", "20", VISITOR_TYPE.VISITOR, False)
