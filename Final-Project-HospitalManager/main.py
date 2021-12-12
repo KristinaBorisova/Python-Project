@@ -15,7 +15,7 @@ doctors_shifts = {
     "Friday": Specialization_type.SURGEON.value,
 }
 
-specialists_list = []
+specialists_list = [["First Name", "Last Name", 50, "Doctor", "Surgeon", 25]]
 
 patients_list = []
 

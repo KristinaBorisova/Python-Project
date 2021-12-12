@@ -54,7 +54,7 @@ def update_Visitors_data_csv(some_list):
 
 def update_Specialists_data_csv(some_list):
     # Define Header of file
-    header = ["First-Name", "Last-Name", "Age", "Gender", "Phone", "Visitor Type" "has_appointment"]
+    header = ["First-Name", "Last-Name", "Age", "Gender" "Type", "Specialization", "Experience"]
     # Define file name
     filename = "./specialists_data.csv"
     data = some_list
@@ -74,13 +74,14 @@ def add_new_specialist():
     firstName, *lastName = fullName.split()
     print("Please enter age:")
     age = int(input())
-    type = input(("Please enter Specialization type(Doctor/Nurse):"))
-    if type == "Doctor":
+    gender = input("Please enter gender:")
+    doctor_type = input(("Please enter Specialization type(Doctor/Nurse):"))
+    if doctor_type == "Doctor":
         specialization = input("Please choose type of specialization:\n Surgery\n Neurology \n Orthopedics \n GP: ")
         experience = int(input("Years of experience:"))
-        specialistObj = Doctor(firstName, *lastName, age, type, specialization, experience)
-    elif type == "Nurse":
+        specialistObj = Doctor(firstName, *lastName, age, gender, doctor_type, specialization, experience)
+    elif doctor_type == "Nurse":
         experience = int(input("Years of experience:"))
-        specialistObj = Nurse(firstName, lastName, age, type, experience)
+        specialistObj = Nurse(firstName, lastName, age, gender, doctor_type, experience)
 
     return specialistObj

@@ -42,7 +42,9 @@ class menu:
             display_list_content(visitors_list)
         elif option == 5:
             print("\n<<You have chosen to add a new Specialist>>")
-            add_new_specialist()
+            # I need the object's info, not reference to the obj itself........
+            specialists_list.append(add_new_specialist())
+            update_Specialists_data_csv(specialists_list)
 
         elif option == 6:
             print("\n<<You have chosen to add a new Patient>>")

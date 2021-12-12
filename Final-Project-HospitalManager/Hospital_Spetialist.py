@@ -9,18 +9,18 @@ class Doctor_Type(Enum):
 
 
 class Hospital_Worker(Person):
-    def __init__(self, first_name, last_name, age, doctor_type, experience):
+    def __init__(self, first_name, last_name, age, gender, doctor_type, experience):
         super().__init__(first_name="noname", last_name="nolastName", age=0)
         self.doctor_type = doctor_type
         self.experience = experience
 
 
 class Doctor(Hospital_Worker):
-    def __init__(self, first_name, last_name, age, doctor_type, specialization_type, experience):
-        super().__init__(first_name, last_name, age, doctor_type, experience)
+    def __init__(self, first_name, last_name, age, gender, doctor_type, experience, specialization_type):
+        super().__init__(first_name, last_name, age, gender, doctor_type, experience)
         self.specialization_type = specialization_type
 
 
 class Nurse(Hospital_Worker):
-    def __init__(self, first_name, last_name, age, doctor_type, experience):
-        super().__init__(first_name, last_name, age, doctor_type, experience)
+    def __init__(self, first_name, last_name, age, gender, doctor_type, experience):
+        super().__init__(first_name, last_name, age, gender, doctor_type, experience)
