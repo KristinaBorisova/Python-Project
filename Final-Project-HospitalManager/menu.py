@@ -8,7 +8,6 @@ Main program's menu is started from here
 
 class menu:
     def display_menu():
-
         print("----User Menu----")
         print("[1] Show list of Doctors")
         print("[2] Show list of Patients")
@@ -47,4 +46,5 @@ class menu:
         display_menu()
         option = int(input("Enter your option:"))
 
-    print("Actions completed. Thank you for using this program!")
+
+print("Actions completed. Thank you for using this program!")

@@ -16,18 +16,24 @@ doctors_shifts = {
     "Friday": Specialist_Type.NURSE.value,
 }
 
-patients_list = [["Fist_Name", "Second_Name", "Last_Name", 23, True, True]]
-visitors_list = []
+patients_list = []
+
+visitors_list = [
+    ["Visitor1", "LastName1", 35, "male", "+359-886-666-777", VISITOR_TYPE.VISITOR, False],
+    ["Visitor1", "LastName1", 35, "male", "+359-886-666-777", VISITOR_TYPE.VISITOR, False],
+]
 
 
 def main():
 
+    visitor3 = Visitor("Visitor3", "LastName3", 33, "male", "+359-886-666-777", VISITOR_TYPE.VISITOR, False)
+    visitor2 = Visitor("Name2", "LastName2", 42, "female", "(+359) 886 777 888", VISITOR_TYPE.VISITOR, True)
+    visitors_list.append(visitor3)
+
     # managerMenu = menu
 
-    patient = Hospital_Visitor("Kristina", "Borisova", 23, "female", "patient")
-
     # 1.create a new csv file and write in it
-    header = ["First-Name", "Last-Name", "Age", "Gender", "Priority", "WaitingTime"]
+    """header = ["First-Name", "Last-Name", "Age", "Gender", "Priority", "WaitingTime"]
     data = [
         ["Alex", "Alexov", 35, "Male", "2", 10],
         ["Alex", "Alexov", 35, "Male", "2", 10],
@@ -37,30 +43,10 @@ def main():
     with open(filename, "w", newline="") as file:
         csvwriter = csv.writer(file)  # 2. create a csvwriter object
         csvwriter.writerow(header)  # 4. write the header
-        csvwriter.writerows(data)  # 5. write the rest of the data
-
-    hospital_specialists = [
-        {"First name": "Name1", "Last_Name": 5, "age": 20},
-        {"First name": "Name2", "Last_Name": 1, "age": 10},
-        {"First name": "Name3", "Last_Name": 10, "age": 5},
-    ]
-
-    hospital_specialist2 = [
-        {"Fist Name", "Last Name", 45, "Male", "Heart", "15"},
-        {"Fist Name2", "Last Name2", 452, "Male2", "Heart2", "152"},
-    ]
-
-    display_list_content(hospital_specialists)
-
-    print("New List coming:::::")
-
-    # Create a tuple with Doctors' names
-    # a_tuple = (1, 2, 3, 4)
-    # display_tuple_content(a_tuple)
+        csvwriter.writerows(data)  # 5. write the rest of the data"""
+    # Visitor: First Name; Last Name; Age; Gender; Phone; Visitor Type, has Appointment)
 
 
-# visitor1 = Visitor("Name1", "LastName1", "20", VISITOR_TYPE.VISITOR, False)
-# visitor2 = Visitor("Name2", "LastName2", "30", VISITOR_TYPE.VISITOR, True)
 #   print(visitor1.get_last, "|", visitor2.get_last)
 
 # patient1 = Patient("Name3", "LastName3", "50", VISITOR_TYPE.PATIENT, False, False)
@@ -69,8 +55,6 @@ def main():
 
 # doctor1 = Doctor("Name1", "LastName", "20", SPECIALIST_TYPE.DOCTOR, "cardiology", 15)
 # doctor2 = Nurse("Name2", "LastName2", "30", SPECIALIST_TYPE.NURSE, 10)
-
-# hospital_specialists.append(visitor1)
 
 
 if __name__ == "__main__":

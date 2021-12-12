@@ -3,33 +3,32 @@ from enum import Enum
 
 # Diferentiating between different types of visitors
 class VISITOR_TYPE(Enum):
-    PATIENT = "p"
-    VISITOR = "v"
+    PATIENT = "patient"
+    VISITOR = "visitor"
 
 
 class Hospital_Visitor(Person):
-    def __init__(self, first_name, last_name, age, gender, TYPE):
-        super().__init__(first_name="noname", last_name="nolastName", age=0)
-        self.TYPE = TYPE
+    waiting_time = 10
 
-    def get_age(self):
-        return super().get_age()
-
-    def get_first(self):
-        return super().get_first()
-
-    def get_last(self):
-        return super().get_last()
+    def __init__(self, first_name, last_name, age, gender, phone, visitor_type):
+        super().__init__(first_name, last_name, age, gender, phone)
+        self.visitor_type = visitor_type
+        
 
 
 class Patient(Hospital_Visitor):
-    def __init__(self, first_name, last_name, age, TYPE, has_symptoms, is_injured):
-        super().__init__(first_name="noname", last_name="nolastName", age=0, TYPE="p")
+    waiting_time = 5
+
+    def __init__(self, first_name, last_name, age, gender, phone, visitor_type, has_symptoms, is_injured):
+        super().__init__(first_name, last_name, age, gender, visitor_type)
         self.has_symptoms = has_symptoms
         self.is_injured = is_injured
 
 
 class Visitor(Hospital_Visitor):
-    def __init__(self, first_name, last_name, age, TYPE, has_appointment):
-        super().__init__(first_name="noname", last_name="nolastName", age=0, gender="Male", TYPE="v")
+    waiting_time = 20
+
+    def __init__(self, first_name, last_name, age, gender, phone, visitor_type, has_appointment):
+        super().__init__(first_name, last_name, age, gender,phone, visitor_type)
         self.has_appointment = has_appointment
+        self.visitor_type = VISITOR_TYPE.VISITOR
