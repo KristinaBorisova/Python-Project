@@ -2,31 +2,39 @@ from typing import ClassVar
 from Hospital_Visitor import *
 from Hospital_Spetialist import *
 from Specialist_Type import *
-
-# from menu import displayMenu
+from menu import *
 from enum import Enum
 
-# import information
-# import csv
+
+doctors_shifts = {
+    "Monday": Specialist_Type.SURGEON.value,
+    "Tuesday": Specialist_Type.NEUROLOGIST.value,
+    "Wednesday": Specialist_Type.ORTHOPEDIC.value,
+    "Thursday": Specialist_Type.GP.value,
+    "Friday": Specialist_Type.NURSE.value,
+}
+
+patients_list = [["Fist_Name", "Second_Name", "Last_Name", 23, True, True]]
+visitors_list = []
+
+# def display_list_content(some_list):
+#   for index in range(len(some_list)):
+#      element = some_list[index]
+#     print(index + 1, element)
 
 
-def display_list_content(some_list):
-    for index in range(len(some_list)):
-        element = some_list[index]
-        print(index + 1, element)
+# def display_tuple_content(some_tuple):
+#   for index, item in enumerate(some_tuple):
+#       print(index, item)
 
-
-def display_tuple_content(some_tuple):
-    for index, item in enumerate(some_tuple):
-        print(index, item)
-
-
-def display_dictionaty_conent(some_dictionary):
-    for key, value in some_dictionary.items():
-        print(key, ":", str(value))
+# def display_dictionaty_conent(some_dictionary):
+#   for key, value in some_dictionary.items():
+#      print(key, ":", str(value))
 
 
 def main():
+
+    managerMenu = menu
 
     hospital_specialists = [
         {"First name": "Name1", "Last_Name": 5, "age": 20},
@@ -54,24 +62,13 @@ def main():
     a_tuple = (1, 2, 3, 4)
     display_tuple_content(a_tuple)
 
-    print("=====Doctors' Shift DICTIONARY=====")
-    # Create a dictionaty for holding information about Doctors' weekly shift
-    doctors_shifts = {
-        "Monday": Specialist_Type.SURGEON.value,
-        "Tuesday": Specialist_Type.NEUROLOGIST.value,
-        "Wednesday": Specialist_Type.ORTHOPEDIC.value,
-        "Thursday": Specialist_Type.GP.value,
-        "Friday": Specialist_Type.NURSE.value,
-    }
 
-    display_dictionaty_conent(doctors_shifts)
+# visitor1 = Visitor("Name1", "LastName1", "20", VISITOR_TYPE.VISITOR, False)
+# visitor2 = Visitor("Name2", "LastName2", "30", VISITOR_TYPE.VISITOR, True)
+#   print(visitor1.get_last, "|", visitor2.get_last)
 
-    # visitor1 = Visitor("Name1", "LastName1", "20", VISITOR_TYPE.VISITOR, False)
-    # visitor2 = Visitor("Name2", "LastName2", "30", VISITOR_TYPE.VISITOR, True)
-    #   print(visitor1.get_last, "|", visitor2.get_last)
-
-    # patient1 = Patient("Name3", "LastName3", "50", VISITOR_TYPE.PATIENT, False, False)
-    # patient2 = Patient("Name4", "LastName4", "20", VISITOR_TYPE.PATIENT, False, True)
+# patient1 = Patient("Name3", "LastName3", "50", VISITOR_TYPE.PATIENT, False, False)
+# patient2 = Patient("Name4", "LastName4", "20", VISITOR_TYPE.PATIENT, False, True)
 
 
 # doctor1 = Doctor("Name1", "LastName", "20", SPECIALIST_TYPE.DOCTOR, "cardiology", 15)
