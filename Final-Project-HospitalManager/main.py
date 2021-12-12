@@ -57,11 +57,11 @@ def main():
     print("=====Doctors' Shift DICTIONARY=====")
     # Create a dictionaty for holding information about Doctors' weekly shift
     doctors_shifts = {
-        "Monday": Specialist_Type.SURGEON,
-        "Tuesday": Specialist_Type.NEUROLOGIST,
-        "Wednesday": Specialist_Type.ORTHOPEDIC,
-        "Thursday": Specialist_Type.GP,
-        "Friday": Specialist_Type.NURSE,
+        "Monday": Specialist_Type.SURGEON.value,
+        "Tuesday": Specialist_Type.NEUROLOGIST.value,
+        "Wednesday": Specialist_Type.ORTHOPEDIC.value,
+        "Thursday": Specialist_Type.GP.value,
+        "Friday": Specialist_Type.NURSE.value,
     }
 
     display_dictionaty_conent(doctors_shifts)
