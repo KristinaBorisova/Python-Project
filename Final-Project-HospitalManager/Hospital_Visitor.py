@@ -13,8 +13,6 @@ class Hospital_Visitor(Person):
     def __init__(self, first_name, last_name, age, gender, phone, visitor_type):
         super().__init__(first_name, last_name, age, gender, phone)
         self.visitor_type = visitor_type
-        
-
 
 class Patient(Hospital_Visitor):
     waiting_time = 5

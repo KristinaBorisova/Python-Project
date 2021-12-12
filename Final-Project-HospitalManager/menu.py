@@ -1,4 +1,4 @@
-from main import doctors_shifts, patients_list, visitors_list
+from main import doctors_shifts, patients_list, visitors_list, specialists_list
 from menu_Manager import *
 
 """
@@ -42,6 +42,7 @@ class menu:
             display_list_content(visitors_list)
         elif option == 5:
             print("\n<<You have chosen to add a new Specialist>>")
+            add_new_specialist()
 
         elif option == 6:
             print("\n<<You have chosen to add a new Patient>>")
