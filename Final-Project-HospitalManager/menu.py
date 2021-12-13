@@ -43,7 +43,7 @@ class Menu:
         elif option == 5:
             print("\n<<You have chosen to add a new Specialist>>")
             # I need the object's info, not reference to the obj itself........
-            specialists_list.append(add_new_specialist())
+            specialists_list.append(str(add_new_specialist()))
             update_Specialists_data_csv(specialists_list)
 
         elif option == 6:
@@ -55,7 +55,8 @@ class Menu:
             add_new_visitor()
         elif option == 8:
             print("<<You have chosen to see the Average Waiting Time>>")
-            show_avg_waiting_time()
+            avg_waiting_time = show_avg_waiting_time()
+            print("Average waiting time is:", avg_waiting_time)
         else:
             print("Invalid Optoin. Please try again!")
 

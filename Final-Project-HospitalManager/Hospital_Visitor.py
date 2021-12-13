@@ -16,11 +16,12 @@ class Hospital_Visitor(Person):
 
 
 class Patient(Hospital_Visitor):
-    waiting_time = 5
+    waiting_time = 10
 
     def __init__(self, first_name, last_name, age, gender, phone, visitor_type, has_symptoms):
         super().__init__(first_name, last_name, age, gender, phone, visitor_type)
         self.has_symptoms = has_symptoms
+        self.visitor_type = Visitor_Type.PATIENT
 
 
 class Visitor(Hospital_Visitor):

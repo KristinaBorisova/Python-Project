@@ -1,8 +1,8 @@
 import csv
 from Hospital_Spetialist import Doctor, Nurse
 from Hospital_Visitor import Patient, Visitor
-import Specialization_type
 from Hospital_Visitor import Visitor_Type
+from Main import patients_list, visitors_list
 
 
 def display_dictionaty_conent(some_dictionary):
@@ -71,22 +71,23 @@ def update_Specialists_data_csv(some_list):
 
 
 def add_new_specialist():
-    print("Please enter person's full name:")
-    fullName = input()
+    fullName = input("Please enter person's full name:")
     firstName, *lastName = fullName.split()
     print("Please enter age:")
     age = int(input())
     gender = input("Please enter gender:")
     doctor_type = input(("Please enter Specialization type(Doctor/Nurse):"))
     if doctor_type == "Doctor":
-        specialization = input("Please choose type of specialization:\n Surgery\n Neurology \n Orthopedics \n GP: ")
+        specialization = input(
+            "Please choose type of specialization:\n -Surgeon\n -Neurolgist \n -Orthopedist \n -GP: \n "
+        )
         experience = int(input("Years of experience:"))
-        specialistObj = Doctor(firstName, *lastName, age, gender, doctor_type, specialization, experience)
+        specialist_Instance = Doctor(firstName, *lastName, age, gender, doctor_type, specialization, experience)
     elif doctor_type == "Nurse":
         experience = int(input("Years of experience:"))
-        specialistObj = Nurse(firstName, lastName, age, gender, doctor_type, experience)
+        specialist_Instance = Nurse(firstName, lastName, age, gender, doctor_type, experience)
 
-    return specialistObj
+    return specialist_Instance
 
 
 def add_new_patient():
@@ -98,34 +99,33 @@ def add_new_patient():
     gender = input("Please enter gender:")
     phoneNumb = input(("Please enter phone number in the format (+359)-xxx-xxx-xxx:"))
     visitor_type = Visitor_Type.PATIENT
-    has_symptoms = int(input("Does the patient have any symptoms?(True/False):"))
-    patientObj = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
+    has_symptoms = bool(input("Does the patient have any symptoms?(True/False):"))
+    patient_Instance = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
 
-    return patientObj
+    return patient_Instance
 
 
 def add_new_visitor():
     print("Please enter person's full name:")
     fullName = input()
     firstName, *lastName = fullName.split()
-    print("Please enter age:")
-    age = int(input())
-    gender = input("Please enter gender:")
+    age = int(input("Please enter age:"))
+    gender = input("Please enter gender(female/male):")
     phoneNumb = input(("Please enter phone number in the format (+359)-xxx-xxx-xxx:"))
-    visitor_type = Visitor_type.VISITOR
-    has_symptoms = int(input("Does the visitor have an appointment?(True/False):"))
-    visitorObj = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
+    visitor_type = Visitor_Type.VISITOR
+    has_appointment = bool(input("Does the visitor have an appointment?(True/False):"))
+    visitor_Instance = Visitor(firstName, *lastName, age, gender, phoneNumb, has_appointment)
 
-    return visitorObj
+    return visitor_Instance
 
 
 def show_avg_waiting_time():
-    print("Please choose the type of visiotr (Patient | Visitor):")
-    # type_of_visitor = Visitor_Type.Patient | Visitor_Type.Visitor
-    # numb_of_patients = len ( List of patients)
-    # numb_of_visitors = len (list of visitors)
-    # if(type_of_visitor = Visisotr_Type.Patient):
-    # avg_Waiting_Time = numb_of_patients * 10
-    # elif(type_of_visitor = Visisotr_Type.Visitor):
-    # avg_Waiting_Time = numb_of_patients * 20
-    # return avg_waiting_time
+    type_of_visitor = input("Please choose the type of visiotr (Patient | Visitor):")
+    numb_of_patients = len(patients_list)
+    numb_of_visitors = len(visitors_list)
+    avg_waiting_time = 0
+    if "Patient" in type_of_visitor:
+        avg_waiting_Time = numb_of_patients * 10
+    elif type_of_visitor.__contains__("Visitor"):
+        avg_waiting_Time = numb_of_visitors * 20
+    return int(avg_waiting_time)
