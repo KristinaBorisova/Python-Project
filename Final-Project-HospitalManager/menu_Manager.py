@@ -1,5 +1,7 @@
 import csv
 from Hospital_Spetialist import Doctor, Nurse
+from Hospital_Visitor import Patient, Visitor
+from VISITOR_TYPE import VISITOR_TYPE
 import Specialization_type
 
 
@@ -85,3 +87,33 @@ def add_new_specialist():
         specialistObj = Nurse(firstName, lastName, age, gender, doctor_type, experience)
 
     return specialistObj
+
+
+def add_new_patient():
+    print("Please enter person's full name:")
+    fullName = input()
+    firstName, *lastName = fullName.split()
+    print("Please enter age:")
+    age = int(input())
+    gender = input("Please enter gender:")
+    phoneNumb = input(("Please enter phone number in the format (+359)-xxx-xxx-xxx:"))
+    visitor_type = VISITOR_TYPE.PATIENT
+    has_symptoms = int(input("Does the patient have any symptoms?(True/False):"))
+    patientObj = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
+
+    return patientObj
+
+
+def add_new_visitor():
+    print("Please enter person's full name:")
+    fullName = input()
+    firstName, *lastName = fullName.split()
+    print("Please enter age:")
+    age = int(input())
+    gender = input("Please enter gender:")
+    phoneNumb = input(("Please enter phone number in the format (+359)-xxx-xxx-xxx:"))
+    visitor_type = VISITOR_TYPE.VISITOR
+    has_symptoms = int(input("Does the visitor have an appointment?(True/False):"))
+    visitorObj = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
+
+    return visitorObj

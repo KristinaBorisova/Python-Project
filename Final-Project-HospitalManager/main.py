@@ -39,15 +39,6 @@ def main():
     # managerMenu = menu
 
 
-#   print(visitor1.get_last, "|", visitor2.get_last)
-
-# patient1 = Patient("Name3", "LastName3", "50", VISITOR_TYPE.PATIENT, False, False)
-# patient2 = Patient("Name4", "LastName4", "20", VISITOR_TYPE.PATIENT, False, True)
-
-
-# doctor1 = Doctor("Name1", "LastName", "20", SPECIALIST_TYPE.DOCTOR, "cardiology", 15)
-# doctor2 = Nurse("Name2", "LastName2", "30", SPECIALIST_TYPE.NURSE, 10)
-
 
 if __name__ == "__main__":
     main()

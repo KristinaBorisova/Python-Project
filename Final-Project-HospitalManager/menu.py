@@ -48,8 +48,11 @@ class menu:
 
         elif option == 6:
             print("\n<<You have chosen to add a new Patient>>")
+            add_new_patient()
+
         elif option == 7:
             print("<<You have chosen to add a new Visitor>>")
+            add_new_visitor()
         elif option == 8:
             print("<<You have chosen to see the Average Waiting Time>>")
         else:

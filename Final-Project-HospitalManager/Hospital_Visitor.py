@@ -3,8 +3,8 @@ from enum import Enum
 
 # Diferentiating between different types of visitors
 class VISITOR_TYPE(Enum):
-    PATIENT = "patient"
-    VISITOR = "visitor"
+    PATIENT = "Patient"
+    VISITOR = "Visitor"
 
 
 class Hospital_Visitor(Person):
@@ -17,10 +17,9 @@ class Hospital_Visitor(Person):
 class Patient(Hospital_Visitor):
     waiting_time = 5
 
-    def __init__(self, first_name, last_name, age, gender, phone, visitor_type, has_symptoms, is_injured):
-        super().__init__(first_name, last_name, age, gender, visitor_type)
+    def __init__(self, first_name, last_name, age, gender, phone, visitor_type, has_symptoms):
+        super().__init__(first_name, last_name, age, gender, phone, visitor_type)
         self.has_symptoms = has_symptoms
-        self.is_injured = is_injured
 
 
 class Visitor(Hospital_Visitor):
