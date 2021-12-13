@@ -55,6 +55,7 @@ class menu:
             add_new_visitor()
         elif option == 8:
             print("<<You have chosen to see the Average Waiting Time>>")
+            show_avg_waiting_time()
         else:
             print("Invalid Optoin. Please try again!")
 

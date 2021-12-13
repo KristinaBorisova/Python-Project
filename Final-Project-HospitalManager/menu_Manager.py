@@ -120,7 +120,7 @@ def add_new_visitor():
 
 def show_avg_waiting_time():
     print("Please choose the type of visiotr (Patient | Visitor):")
-    type_of_visitor = Visitor_Type.Patient | Visitor_Type.Visitor
+    #type_of_visitor = Visitor_Type.Patient | Visitor_Type.Visitor
     # numb_of_patients = len ( List of patients)
     # numb_of_visitors = len (list of visitors)
     # if(type_of_visitor = Visisotr_Type.Patient):
