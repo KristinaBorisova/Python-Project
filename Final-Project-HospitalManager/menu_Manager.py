@@ -2,6 +2,7 @@ import csv
 from Hospital_Spetialist import Doctor, Nurse
 from Hospital_Visitor import Patient, Visitor
 import Specialization_type
+from Hospital_Visitor import Visitor_Type
 
 
 def display_dictionaty_conent(some_dictionary):
@@ -96,7 +97,7 @@ def add_new_patient():
     age = int(input())
     gender = input("Please enter gender:")
     phoneNumb = input(("Please enter phone number in the format (+359)-xxx-xxx-xxx:"))
-    visitor_type = Visitor_type.PATIENT
+    visitor_type = Visitor_Type.PATIENT
     has_symptoms = int(input("Does the patient have any symptoms?(True/False):"))
     patientObj = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
 
@@ -120,7 +121,7 @@ def add_new_visitor():
 
 def show_avg_waiting_time():
     print("Please choose the type of visiotr (Patient | Visitor):")
-    #type_of_visitor = Visitor_Type.Patient | Visitor_Type.Visitor
+    # type_of_visitor = Visitor_Type.Patient | Visitor_Type.Visitor
     # numb_of_patients = len ( List of patients)
     # numb_of_visitors = len (list of visitors)
     # if(type_of_visitor = Visisotr_Type.Patient):

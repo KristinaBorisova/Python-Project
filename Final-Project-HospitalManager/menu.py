@@ -1,12 +1,12 @@
-from main import doctors_shifts, patients_list, visitors_list, specialists_list
-from menu_Manager import *
+from Main import doctors_shifts, patients_list, visitors_list, specialists_list
+from Menu_Manager import *
 
 """
 Main program's menu is started from here
 """
 
 
-class menu:
+class Menu:
     def display_menu():
         print("----User Menu----")
         print("[1] Show Specialists' Weekly Schedule")
