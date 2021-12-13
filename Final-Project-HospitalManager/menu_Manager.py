@@ -1,7 +1,6 @@
 import csv
 from Hospital_Spetialist import Doctor, Nurse
 from Hospital_Visitor import Patient, Visitor
-from VISITOR_TYPE import VISITOR_TYPE
 import Specialization_type
 
 
@@ -97,7 +96,7 @@ def add_new_patient():
     age = int(input())
     gender = input("Please enter gender:")
     phoneNumb = input(("Please enter phone number in the format (+359)-xxx-xxx-xxx:"))
-    visitor_type = VISITOR_TYPE.PATIENT
+    visitor_type = Visitor_type.PATIENT
     has_symptoms = int(input("Does the patient have any symptoms?(True/False):"))
     patientObj = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
 
@@ -112,8 +111,20 @@ def add_new_visitor():
     age = int(input())
     gender = input("Please enter gender:")
     phoneNumb = input(("Please enter phone number in the format (+359)-xxx-xxx-xxx:"))
-    visitor_type = VISITOR_TYPE.VISITOR
+    visitor_type = Visitor_type.VISITOR
     has_symptoms = int(input("Does the visitor have an appointment?(True/False):"))
     visitorObj = Patient(firstName, *lastName, age, gender, phoneNumb, has_symptoms)
 
     return visitorObj
+
+
+def show_avg_waiting_time():
+    print("Please choose the type of visiotr (Patient | Visitor):")
+    type_of_visitor = Visitor_Type.Patient | Visitor_Type.Visitor
+    # numb_of_patients = len ( List of patients)
+    # numb_of_visitors = len (list of visitors)
+    # if(type_of_visitor = Visisotr_Type.Patient):
+    # avg_Waiting_Time = numb_of_patients * 10
+    # elif(type_of_visitor = Visisotr_Type.Visitor):
+    # avg_Waiting_Time = numb_of_patients * 20
+    # return avg_waiting_time

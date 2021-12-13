@@ -2,7 +2,7 @@ from Person import Person
 from enum import Enum
 
 # Diferentiating between different types of visitors
-class VISITOR_TYPE(Enum):
+class Visitor_Type (Enum):
     PATIENT = "Patient"
     VISITOR = "Visitor"
 
