@@ -4,6 +4,7 @@ from Hospital_Spetialist import Doctor
 
 class TestVisitor(unittest.testClass):
     def setUp(self):
+       #setting instance attributes
         self.obj = Doctor("firstName", "lastName", 40, "d", "Cardiologist", 15)
 
     # Unittest for first name
